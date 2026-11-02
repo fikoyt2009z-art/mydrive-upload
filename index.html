@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FILE DROP — Загрузка файлов</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body>
+  <div class="background-glow"></div>
+
+  <main class="container">
+    <header class="header">
+      <div class="logo-badge">FILE DROP</div>
+      <h1>Безопасная загрузка файлов</h1>
+      <p class="subtitle">Перетащите или выберите фотографии и видео до 1 ГБ</p>
+    </header>
+
+    <section class="dropzone-card" id="dropzoneCard">
+      <input type="file" id="fileInput" multiple accept="image/*,video/*" hidden>
+
+      <div class="dropzone-content" id="dropzoneContent">
+        <div class="upload-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="17 8 12 3 7 8"/>
+            <line x1="12" y1="3" x2="12" y2="15"/>
+          </svg>
+        </div>
+        <button type="button" class="btn-primary" id="selectBtn">Выбрать фото и видео</button>
+        <p class="drop-hint">или перетащите файлы сюда</p>
+        <span class="file-limit-info">Поддерживаются медиафайлы до 1 ГБ</span>
+      </div>
+
+      <div class="turnstile-wrapper">
+        <div class="cf-turnstile" id="turnstileWidget"></div>
+      </div>
+    </section>
+
+    <section class="queue-section hidden" id="queueSection">
+      <div class="queue-header">
+        <h2>Очередь загрузки</h2>
+        <span class="queue-stats" id="queueStats">0 / 0</span>
+      </div>
+      <div class="file-list" id="fileList"></div>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
