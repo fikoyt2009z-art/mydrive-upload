@@ -1,0 +1,21 @@
+{
+  "name": "file-drop-google-drive",
+  "version": "1.0.0",
+  "description": "Прямая безопасная загрузка фото и видео в Google Drive через Netlify Functions",
+  "main": "app.js",
+  "scripts": {
+    "build": "echo 'No build step required for vanilla JS'",
+    "start": "npx netlify dev"
+  },
+  "keywords": [
+    "google-drive",
+    "netlify-functions",
+    "resumable-upload",
+    "vanilla-js"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "google-auth-library": "^9.0.0"
+  }
+}
